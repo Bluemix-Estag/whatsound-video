@@ -7,7 +7,7 @@ Endpoint to get a JSON object from Youtube as response
 REST API to GET video clip:
 
 ```
-    GET https://video-api.mybluemix.net/v1/youtube/clip?query=NAME_OF_DESIRED_MUSIC_VIDEO
+    GET https://video-api.mybluemix.net/whatsound/api/v1/youtube/clip/values?query=NAME_OF_DESIRED_MUSIC_VIDEO
 ```
 
 Sending a String query with name of desired music video and receive a JSON as response
