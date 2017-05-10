@@ -15,7 +15,7 @@ Sending a String query with name of desired music video and receive a JSON as re
 # Response for 
 
 ```
-GET https://video-api.mybluemix.net/v1/youtube/clip?query=Shape%20of%20you
+GET https://video-api.mybluemix.net/whatsound/api/v1/youtube/clip/values?query=Shape%20of%20you
 ```
 
 

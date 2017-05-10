@@ -18,7 +18,7 @@ var mydb;
 var youtube = new Youtube();
 youtube.setKey('AIzaSyAefXlqPuKq7rU6PDrsZ2NnpS3fajTLA3M');
 
-app.get('/v1/youtube/clip', function (req, res) {
+app.get('/whatsound/api/v1/youtube/clip/values', function (req, res) {
     var query = req.query.query;
     console.log(query);
     youtube.search(query, 2, function (error, result) {
