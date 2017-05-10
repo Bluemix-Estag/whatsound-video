@@ -1,0 +1,6 @@
+---
+applications:
+ - name: Video
+   random-route: false
+   host: video-api
+   memory: 128M
