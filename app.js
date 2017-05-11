@@ -26,7 +26,7 @@ app.get('/whatsound/api/v1/youtube/clip/values', function (req, res) {
             console.log(error);
             res.send(error);
         } else {
-            if(result.pageInfo.totalResults == 0){
+            if (result.pageInfo.totalResults == 0) {
                 var response = {
                     "error": {
                         "code": 10,
@@ -35,14 +35,22 @@ app.get('/whatsound/api/v1/youtube/clip/values', function (req, res) {
                     }
                 }
                 res.send(response);
-            }else{
-                var response = {
+            } else {
+                var response = 
+                    [{
                     "id": JSON.stringify(result['items'][0]['id']['videoId']).replace(new RegExp('\\"', "g"), ""),
                     "iframe_url": "https://www.youtube.com/embed/" + JSON.stringify(result['items'][0]['id']['videoId']).replace(new RegExp('\\"', "g"), ""),
-                    "thumbnail": "https://i.ytimg.com/vi/"+JSON.stringify(result['items'][0]['id']['videoId']).replace(new RegExp('\\"', "g"), "")+"/default.jpg",
+                    "thumbnail": "https://i.ytimg.com/vi/" + JSON.stringify(result['items'][0]['id']['videoId']).replace(new RegExp('\\"', "g"), "") + "/default.jpg",
                     "url": "https://www.youtube.com/watch?v=" + JSON.stringify(result['items'][0]['id']['videoId']).replace(new RegExp('\\"', "g"), ""),
-                    "title": result['items'][0]['snippet']['title']
-                }
+                    "title": result['items'][0]['snippet']['title']},
+                    {
+                    "id": JSON.stringify(result['items'][1]['id']['videoId']).replace(new RegExp('\\"', "g"), ""),
+                    "iframe_url": "https://www.youtube.com/embed/" + JSON.stringify(result['items'][1]['id']['videoId']).replace(new RegExp('\\"', "g"), ""),
+                    "thumbnail": "https://i.ytimg.com/vi/" + JSON.stringify(result['items'][1]['id']['videoId']).replace(new RegExp('\\"', "g"), "") + "/default.jpg",
+                    "url": "https://www.youtube.com/watch?v=" + JSON.stringify(result['items'][1]['id']['videoId']).replace(new RegExp('\\"', "g"), ""),
+                    "title": result['items'][1]['snippet']['title']}
+                        ]
+                
                 res.send(response);
             }
         }
